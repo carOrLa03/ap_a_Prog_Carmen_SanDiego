@@ -4,6 +4,7 @@ class Hospital{
     responsable;
     personal;
     pacientes;
+    
     constructor(nom, localidad, director){
         this.nombre = nom;
         this.localidad = localidad;

@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img__carrusel{
+    width: 50em;
+    height: 30em;
+    border-radius: 15px;
+}
+.carrusel{
+    width: 50rem;
+    height: 50rem;
+    
+}
