@@ -20,3 +20,20 @@ main{
     height: 50rem;
     
 }
+.footer{
+    width: auto;
+    height: 5em;
+    background-color: rgba(153, 153, 153, 0.288);
+    
+}
+.footer__lista{
+    color: #333;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer__lista__item_link__icon{
+    width: 2rem;
+    height: 2rem;
+}

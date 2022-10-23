@@ -1,12 +1,14 @@
-class Paciente{
+export default class Paciente{
     nombre;
     tlf;
     dni;
+    especialista;
 
-    constructor(nom, tlf, dni){
+    constructor(nom, tlf, dni, especialista){
         this.nombre = nom;
         this.tlf = tlf;
         this.dni = dni;
+        this.especialista = especialista.getDni();
     }
 
     get nombre(){
@@ -26,5 +28,14 @@ class Paciente{
     }
     set nombre(dni){
         this.dni = dni;
+    }
+    get especialista() {
+        return this.especialista;
+    }
+    set especialista(especialista) {
+        this.especialista = especialista.getDni();
+    }
+    muestraDatos() {
+        return `DNI del paciente: ${this.dni}\n Nombre: ${this.nombre}\n Télefono: ${this.tlf}\n Especialista asignado: ${this.especialista}`;
     }
 }
