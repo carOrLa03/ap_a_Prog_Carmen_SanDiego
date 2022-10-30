@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    background-color: lightseagreen;
+    color: rgb(23, 37, 37);
+    text-align: center;
+}
+.title{
+    font-size:3em;
+    color: bisque;
+    text-shadow: 2px 2px 20px rgb(23, 37, 37), 2px 2px 20px rgb(154, 185, 185);
+}
+.subtitle{
+    font-size:2em;
+    color: bisque;
+}
+.form_hospital{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.formModifica{
+    display: block;
+}
+.hidden{
+    display: none;
+}
