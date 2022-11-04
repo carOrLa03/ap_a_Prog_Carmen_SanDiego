@@ -120,6 +120,6 @@ export default class Hospital {
   }
 
   mostrarHospital() {
-    return `Hospital: ${this.nombre} Localidad: ${this.localidad} Director: ${this.responsable} Código Postal: ${this.codPostal}`;
+    return `Hospital: ${this.nombre} Localidad: ${this.localidad} Director: ${this.responsable} Código Postal: ${this.codPostal}\n`;
   }
 }

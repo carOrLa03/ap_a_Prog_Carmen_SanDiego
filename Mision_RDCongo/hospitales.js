@@ -24,10 +24,8 @@ export default class Hospitales {
     const div = document.createElement("div");
     for (let h of this.listHosp) {
       let p = document.createElement("p");
-      let br = document.createElement("br");
       p.textContent = h.mostrarHospital();
       div.appendChild(p);
-      div.appendChild(br);
     }
     return div.innerHTML;
   }
@@ -59,30 +57,39 @@ export default class Hospitales {
   // FUNCIONES QUE AÑADEN, MUESTRAN, ELIMINAN Y MODIFICAN LOS EMPLEADOS
   // DEL HOSPITAL ELEGIDO
   añadirTrabajadoresHospital(codigo, nombrep, especialidad, id) {
+    console.log('añadiendo')
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
         h.añadePersonal(nombrep, especialidad, id);
+        console.log('añadido')
       }
     }
   }
   muestraTrabajadoresHospital(codigo) {
+    console.log('mostrando')
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
+        console.log('mostrado');
         return h.mostrarTodoPersonal();
+
       }
     }
   }
 
   eliminaTrabajadoresHospital(codigo, id) {
+    console.log('eliminando');
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
         h.eliminaTrabajador(id);
+        console.log('eliminado');
       }
     }
   }
   modificaTrabajadoresHospital(codigo, id, campoModifica, x) {
+    console.log('modificando');
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
+        console.log('modificado');
         return h.modificaTrabajador(id, campoModifica, x);
       }
     }
@@ -121,3 +128,5 @@ export default class Hospitales {
     }
   }
 }
+
+

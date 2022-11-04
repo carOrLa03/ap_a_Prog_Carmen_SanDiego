@@ -1,13 +1,14 @@
 import Hospitales from "./hospitales.js";
 
 const hs = new Hospitales();
-// ACCIONES DEL FORMULARIO DE HOSPITAL
 
+// ACCIONES DEL FORMULARIO DE HOSPITAL
+// botones del formulario hospital
 const bAñadeH = document.getElementById("anadeH");
 const bEliminaH = document.getElementById("eliminaH");
 const bModificaH = document.getElementById("modificaH");
 const bMuestraH = document.getElementById("muestraH");
-const bAñadeTS = document.getElementById("anadeTS");
+const formularioHosp = document.getElementById('formHospital')
 
 bAñadeH.addEventListener("click", (e) => {
   e.preventDefault();
@@ -16,6 +17,9 @@ bAñadeH.addEventListener("click", (e) => {
   var localHS = document.getElementById("localidad").value;
   var respHS = document.getElementById("responsable").value;
   hs.añadeHospitales(idHS, nomHS, localHS, respHS);
+
+  // para vaciar el formulario tras añadir un nuevo hospital
+  formularioHosp.reset();
 });
 bMuestraH.addEventListener("click", (e) => {
   e.preventDefault();
@@ -47,4 +51,74 @@ modifica.addEventListener("click", (e) => {
   hs.modificaHosp(codigo, categoria, x);
   formModifica.classList.remove("formModifica");
   formModifica.classList.add("hidden");
+
 });
+//  AÑADIR LOS TRABAJADORES A UN HOSPITAL y mostrar el formulario de trabajadores
+const bAnadeTS = document.getElementById("anadeTS");
+const formTrabajadores = document.getElementById("formTrabajadores")
+
+bAnadeTS.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('añadiendo')
+  formTrabajadores.classList.remove("hidden");
+})
+bAnadeTS.addEventListener('dblclick', (e) => {
+  e.preventDefault()
+  formTrabajadores.classList.add("hidden");
+})
+
+// variables para tratar los datos de los trabajadores
+const bAnadeTRA = document.getElementById('anadeT')
+const bEliminaTRA = document.getElementById('eliminaT')
+const bModificaTRA = document.getElementById('modificaT')
+const bMuestraTRA = document.getElementById('muestraT')
+
+bAnadeTRA.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('añadiendo')
+  var idhosp = document.getElementById('idH').value
+  var idTra = document.getElementById('idT').value
+  var nomTra = document.getElementById('nomT').value
+  var especialidad = document.getElementById('opcion').value
+  console.log('especialidad')
+  hs.añadirTrabajadoresHospital(idhosp, nomTra, especialidad, idTra)
+
+  // para vaciar el formulario tras añadir un nuevo trabajador
+  formTrabajadores.reset();
+})
+bEliminaTRA.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('elimina')
+  var idH = document.getElementById('idH').value
+  var idTra = document.getElementById('idT').value
+  hs.eliminaTrabajadoresHospital(idH, idTra)
+})
+bModificaTRA.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('modificando')
+})
+bMuestraTRA.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('mostrando')
+  const cajaTrabajadores = document.getElementById("mostrarTrab");
+  const div = document.createElement("div");
+  var idH = document.getElementById('idH').value
+
+  div.textContent = hs.muestraTrabajadoresHospital(idH);
+  cajaTrabajadores.appendChild(div);
+
+
+})
+
+
+// AÑADIR PACIENTES A UN TRABAJADOR y mostrar el formulario de pacientes
+const bAnadePacientes = document.getElementById("anadePC")
+const formPacientes = document.getElementById("formPacientes")
+bAnadePacientes.addEventListener('click', (e) => {
+  e.preventDefault()
+  formPacientes.classList.remove("hidden");
+})
+bAnadePacientes.addEventListener('dblclick', (e) => {
+  e.preventDefault()
+  formPacientes.classList.add("hidden");
+})
