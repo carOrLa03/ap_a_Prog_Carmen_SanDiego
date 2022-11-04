@@ -55,11 +55,10 @@ modifica.addEventListener("click", (e) => {
 });
 //  AÑADIR LOS TRABAJADORES A UN HOSPITAL y mostrar el formulario de trabajadores
 const bAnadeTS = document.getElementById("anadeTS");
-const formTrabajadores = document.getElementById("formTrabajadores")
+const formTrabajadores = document.getElementById("formTrabajadores");
 
 bAnadeTS.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log('añadiendo')
   formTrabajadores.classList.remove("hidden");
 })
 bAnadeTS.addEventListener('dblclick', (e) => {
@@ -68,20 +67,18 @@ bAnadeTS.addEventListener('dblclick', (e) => {
 })
 
 // variables para tratar los datos de los trabajadores
-const bAnadeTRA = document.getElementById('anadeT')
-const bEliminaTRA = document.getElementById('eliminaT')
-const bModificaTRA = document.getElementById('modificaT')
-const bMuestraTRA = document.getElementById('muestraT')
+const bAnadeTRA = document.getElementById('anadeT');
+const bEliminaTRA = document.getElementById('eliminaT');
+const bModificaTRA = document.getElementById('modificaT');
+const bMuestraTRA = document.getElementById('muestraT');
 
 bAnadeTRA.addEventListener('click', (e) => {
-  e.preventDefault()
-  console.log('añadiendo')
-  var idhosp = document.getElementById('idH').value
-  var idTra = document.getElementById('idT').value
-  var nomTra = document.getElementById('nomT').value
-  var especialidad = document.getElementById('opcion').value
-  console.log('especialidad')
-  hs.añadirTrabajadoresHospital(idhosp, nomTra, especialidad, idTra)
+  e.preventDefault();
+  var idhosp = document.getElementById('idHosp').value;
+  var idTra = document.getElementById('idT').value;
+  var nomTra = document.getElementById('nomT').value;
+  var especialidad = document.getElementById('opcion').value;
+  hs.añadirTrabajadoresHospital(idhosp, nomTra, especialidad, idTra);
 
   // para vaciar el formulario tras añadir un nuevo trabajador
   formTrabajadores.reset();
@@ -89,8 +86,8 @@ bAnadeTRA.addEventListener('click', (e) => {
 bEliminaTRA.addEventListener('click', (e) => {
   e.preventDefault()
   console.log('elimina')
-  var idH = document.getElementById('idH').value
-  var idTra = document.getElementById('idT').value
+  var idH = document.getElementById('idH').value;
+  var idTra = document.getElementById('idT').value;
   hs.eliminaTrabajadoresHospital(idH, idTra)
 })
 bModificaTRA.addEventListener('click', (e) => {
@@ -99,12 +96,12 @@ bModificaTRA.addEventListener('click', (e) => {
 })
 bMuestraTRA.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log('mostrando')
+  alert('mostrando');
   const cajaTrabajadores = document.getElementById("mostrarTrab");
   const div = document.createElement("div");
-  var idH = document.getElementById('idH').value
+  var idHosp = document.getElementById('idHosp').value;
 
-  div.textContent = hs.muestraTrabajadoresHospital(idH);
+  div.textContent = hs.muestraTrabajadoresHospital(idHosp);
   cajaTrabajadores.appendChild(div);
 
 

@@ -57,11 +57,9 @@ export default class Hospitales {
   // FUNCIONES QUE AÑADEN, MUESTRAN, ELIMINAN Y MODIFICAN LOS EMPLEADOS
   // DEL HOSPITAL ELEGIDO
   añadirTrabajadoresHospital(codigo, nombrep, especialidad, id) {
-    console.log('añadiendo')
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
         h.añadePersonal(nombrep, especialidad, id);
-        console.log('añadido')
       }
     }
   }
