@@ -7,6 +7,9 @@ export default class Hospitales {
   }
 
   añadeHospitales(codigo, nombre, localidad, jefe) {
+    if (codigo == "") {
+      return alert("EL ID DEL HOSPITAL NO PUEDE ESTAR VACÍO");
+    }
     let hosp = new Hospital(codigo, nombre, localidad, jefe);
     this.listHosp.add(hosp);
     return alert(`Hospital añadido`);
@@ -27,7 +30,7 @@ export default class Hospitales {
       p.textContent = h.mostrarHospital();
       div.appendChild(p);
     }
-    return div.innerHTML;
+    return div;
   }
   modificaHosp(codigo, categoria, x) {
     for (let h of this.listHosp) {
@@ -52,7 +55,7 @@ export default class Hospitales {
         return alert(`Hospital modificado`);
       }
     }
-    return alert(`El Hospital no ha posido ser modificado`);
+    return alert(`El Hospital no ha podido ser modificado`);
   }
   // FUNCIONES QUE AÑADEN, MUESTRAN, ELIMINAN Y MODIFICAN LOS EMPLEADOS
   // DEL HOSPITAL ELEGIDO
@@ -64,31 +67,35 @@ export default class Hospitales {
     }
   }
   muestraTrabajadoresHospital(codigo) {
-    console.log('mostrando')
+    if (codigo == "") {
+      return alert("EL ID DEL HOSPITAL NO PUEDE ESTAR VACÍO");
+    }
+    const div = document.createElement("div");
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
-        console.log('mostrado');
-        return h.mostrarTodoPersonal();
-
+        let p = document.createElement("p");
+        p.textContent = h.mostrarTodoPersonal();
+        div.appendChild(p);
       }
     }
+    return div;
   }
 
   eliminaTrabajadoresHospital(codigo, id) {
-    console.log('eliminando');
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
         h.eliminaTrabajador(id);
-        console.log('eliminado');
+      } else {
+        alert("INTRODUCE EL ID DEL HOSPITAL");
       }
     }
   }
   modificaTrabajadoresHospital(codigo, id, campoModifica, x) {
-    console.log('modificando');
     for (let h of this.listHosp) {
       if (h.codPostal === codigo) {
-        console.log('modificado');
         return h.modificaTrabajador(id, campoModifica, x);
+      } else {
+        alert("INTRODUCE EL ID DEL HOSPITAL");
       }
     }
   }
@@ -100,11 +107,13 @@ export default class Hospitales {
     for (let h of this.listHosp) {
       if (h.codPostal === codigoH) {
         h.añadePacientesTrabajador(idTrab, nombreP, tlfP, dniP);
-        console.log("AÑadiendo 1");
       }
     }
   }
   muestraPacdeTrabajadorHospital(codigoH, idTrab) {
+    if (codigo == "") {
+      return alert("EL ID DEL HOSPITAL NO PUEDE ESTAR VACÍO");
+    }
     for (let h of this.listHosp) {
       if (h.codPostal === codigoH) {
         return h.muestraPacientesTrabajador(idTrab);
@@ -114,6 +123,7 @@ export default class Hospitales {
   modificaPacdeTrabajadorHospital(codigoH, idTrab, dniP, campoModifica, x) {
     for (let h of this.listHosp) {
       if (h.codPostal === codigoH) {
+        console.log("modificando pac");
         h.modificaPacienteTrabajador(idTrab, dniP, campoModifica, x);
       }
     }
@@ -121,10 +131,9 @@ export default class Hospitales {
   eliminaPacdeTrabajadorHospital(codigoH, idTrab, dniP) {
     for (let h of this.listHosp) {
       if (h.codPostal === codigoH) {
+        console.log("eliminando 1");
         h.eliminaPacienteTrabajador(idTrab, dniP);
       }
     }
   }
 }
-
-

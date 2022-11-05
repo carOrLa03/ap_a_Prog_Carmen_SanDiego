@@ -41,7 +41,7 @@ export default class Personal {
   mostrarPacientes() {
     let cad = "";
     for (let paciente of this.pacientes) {
-      cad += `${paciente.muestraDatos()} \n----------------------------------- \n`;
+      cad += `${paciente.muestraDatos()} \n`;
     }
     return cad;
   }

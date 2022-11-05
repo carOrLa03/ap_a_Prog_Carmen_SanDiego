@@ -51,14 +51,13 @@ export default class Hospital {
   mostrarTodoPersonal() {
     let cad = "";
     for (let trabajador of this.personal) {
-      cad += `${trabajador.muestraDatos()} \n----------------------------------- \n`;
+      cad += `${trabajador.muestraDatos()} \n`;
     }
     return cad;
   }
   eliminaTrabajador(id) {
     for (let trabajador of this.personal) {
       if (trabajador.id === id) {
-        console.log("elimina");
         this.personal.delete(trabajador);
         return alert(`Trabajador eliminado`);
       }
@@ -93,6 +92,8 @@ export default class Hospital {
     for (let trabajador of this.personal) {
       if (trabajador.id === id) {
         trabajador.rellenaPacientes(nombrep, tlfp, dni);
+      } else {
+        alert("INTRODUCE EL ID DEL TRABAJADOR");
       }
     }
   }

@@ -1,114 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospitales</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hospitales</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">HOSPITALES</h1>
+      <h2 class="header__subtitle">Reto RD_Congo Prueba Final</h2>
+    </header>
 
-<body>
-  <h1 class="title">HOSPITALES</h1>
-  <h2 class="subtitle">Reto RD_Congo Prueba Final</h2>
-  <form action="#" method="post" class="form_hospital" id="formHospital">
-    <h3 class="title_formH">Formulario Hospital</h3>
-    <div>
-      <label for="">ID</label>
-      <input type="text" id="idH" />
-    </div>
-    <div class="caja_nombre">
-      <label for="">Nombre Hospital</label>
-      <input type="text" id="nomH" />
-    </div>
-    <div class="caja_localidad">
-      <label for="">Localidad</label>
-      <input type="text" id="localidad" />
-    </div>
-    <div class="caja_responsable">
-      <label for="">Nombre del responsable</label>
-      <input type="text" id="responsable" />
-    </div>
-    <div class="botones">
-      <input type="submit" value="Añade" class="boton" id="anadeH" />
-      <input type="submit" value="Elimina" class="boton" id="eliminaH" />
-      <input type="submit" value="Modifica" class="boton" id="modificaH" />
-      <input type="submit" value="MUESTRA HOSPITALES" class="boton" id="muestraH" />
-      <input type="submit" value="Añadir trabajadores" class="boton" id="anadeTS" />
-    </div>
-    <div class="caja_mostrar_hospitales" id="mostrarHosp" class="mostrarHosp"></div>
-    <div id="formModifica" class="hidden">
-      <form action="#" method="post" id="formModifica">
-        <label for="">INTRODUCE EL ID DEL HOSPITAL QUE DESEAS MODIFICAR</label>
-        <input type="text" id="id" />
-        <label for="">ELIGE LA OPCIÓN QUE DESEAS MODIFICAR</label>
-        <select name="" id="opcionMod">
-          <option value="codigo">ID</option>
-          <option value="nombre">Nombre</option>
-          <option value="localidad">Localidad</option>
-          <option value="responsable">Responsable</option>
+    <!-- FORMULARIO PARA INGRESAR HOSPITALES -->
+    <section class="section__hospital">
+      <div class="section__hospital section__hospital--title">
+        <h3 class="title__hospital">Formulario Hospital</h3>
+      </div>
+      <form action="#" method="post" class="form_hospital" id="formHospital">
+        <div>
+          <label for="">ID</label>
+          <input type="text" id="idH"/>
+        </div>
+        <div class="caja_nombre">
+          <label for="">Nombre Hospital</label>
+          <input type="text" id="nomH"/>
+        </div>
+        <div class="caja_localidad">
+          <label for="">Localidad</label>
+          <input type="text" id="localidad" />
+        </div>
+        <div class="caja_responsable">
+          <label for="">Nombre del responsable</label>
+          <input type="text" id="responsable" />
+        </div>
+        <div class="botones">
+          <input type="submit" value="Añade" class="boton" id="anadeH" />
+          <input type="submit" value="Elimina" class="boton" id="eliminaH" />
+          <input type="submit" value="Modifica" class="boton" id="modificaH" />
+          <input
+            type="submit"
+            value="MUESTRA HOSPITALES"
+            class="boton"
+            id="muestraH"
+          />
+          <input
+            type="submit"
+            value="Añadir trabajadores"
+            class="boton"
+            id="anadeTS"
+          />
+        </div>
+        <div
+          class="caja_mostrar_hospitales"
+          id="mostrarHosp"
+        ></div>
+        <div id="formModifica" class="hidden">
+          <form action="#" method="post" id="formModifica">
+            <label for=""
+              >INTRODUCE EL ID DEL HOSPITAL QUE DESEAS MODIFICAR</label
+            >
+            <input type="text" id="id" />
+            <label for="">ELIGE LA OPCIÓN QUE DESEAS MODIFICAR</label>
+            <select name="" id="opcionMod">
+              <option value="codigo">ID</option>
+              <option value="nombre">Nombre</option>
+              <option value="localidad">Localidad</option>
+              <option value="responsable">Responsable</option>
+            </select>
+            <label for="">INTRODUCE EL NUEVO DATO DEL CAMPO ESCOGIDO</label>
+            <input type="text" id="texto" />
+            <input type="submit" value="MODIFICA AHORA" class="boton" id="mod" />
+          </form>
+        </div>
+      </form>
+    </section>
+
+
+    <!-- FORMULARIO PARA INGRESAR A LOS TRABAJADORES -->
+    <section class="section__trabajadores">
+      <div class="section__trabajadores section__trabajadores--title">
+        <h3 class="title_trabajadores">Formulario Trabajadores Hospital</h3>
+      </div>
+      <form
+      action="#"
+      method="post"
+      class="form_hospital hidden"
+      id="formTrabajadores"
+    >
+      
+      <div>
+        <label for="idHosp">ID Hospital</label>
+        <input type="text" id="idHosp" name="idHosp" />
+      </div>
+      <div>
+        <label for="idT">ID Trabajador</label>
+        <input type="text" id="idT" name="idT" />
+      </div>
+      <div class="caja_nombre">
+        <label for="nomT">Nombre Trabajador</label>
+        <input type="text" id="nomT" name="nomT" />
+      </div>
+      <div class="caja_especialidad">
+        <select name="opciones" id="opcion">
+          <option value="Medico">Médico/a</option>
+          <option value="Enfermero">Enfermero/a</option>
+          <option value="Celador">Celador/a</option>
         </select>
-        <label for="">INTRODUCE EL NUEVO DATO DEL CAMPO ESCOGIDO</label>
-        <input type="text" id="texto" />
-        <input type="submit" value="MODIFICA AHORA" class="boton" id="mod" />
+      </div>
+      <div class="botones">
+        <input type="submit" value="Añade" class="boton" id="anadeT" />
+        <input type="submit" value="Elimina" class="boton" id="eliminaT" />
+        <input type="submit" value="Modifica" class="boton" id="modificaT" />
+        <input
+          type="submit"
+          value="MUESTRA TRABAJADORES"
+          class="boton"
+          id="muestraT"
+        />
+        <input
+          type="submit"
+          value="Añadir Pacientes"
+          class="boton"
+          id="anadePC"
+        />
+      </div>
+    </form>
+    <div
+      class="caja_mostrar_Trabajadores"
+      id="mostrarTrab"
+    ></div>
+    <div id="formModificatra" class="hidden">
+      <form action="#" method="post" id="formModificatra">
+        <label for="">ID DEL HOSPITAL DONDE TRABAJA </label>
+        <input type="text" id="idhospi" />
+        <label for="">ID DEL TRABAJADOR A MODIFICAR </label>
+        <input type="text" id="idtrab" />
+        <label for="">OPCIÓN A MODIFICAR </label>
+        <select name="" id="opcionModificada">
+          <option value="id">ID</option>
+          <option value="nombre">Nombre</option>
+          <option value="especialidad">Especialidad</option>
+        </select>
+        <label for="">INTRODUCE EL NUEVO DATO </label>
+        <input type="text" id="text" />
+        <input type="submit" value="MODIFICA AHORA" class="boton" id="modif" />
       </form>
     </div>
-  </form>
+    </section>
 
-  <form action="#" method="post" class="form_hospital hidden" id="formTrabajadores">
-    <h3 class="title_formH">Formulario Trabajadores Hospital</h3>
-    <div>
-      <label for="idHosp">ID Hospital</label>
-      <input type="text" id="idHosp" name="idHosp" />
-    </div>
-    <div>
-      <label for="idT">ID Trabajador</label>
-      <input type="text" id="idT" name="idT" />
-    </div>
-    <div class="caja_nombre">
-      <label for="nomT">Nombre Trabajador</label>
-      <input type="text" id="nomT" name="nomT" />
-    </div>
-    <div class="caja_especialidad">
-      <select name="opciones" id="opcion">
-        <option value="Medico">Médico/a</option>
-        <option value="Enfermero">Enfermero/a</option>
-        <option value="Celador">Celador/a</option>
-      </select>
-    </div>
-    <div class="botones">
-      <input type="submit" value="Añade" class="boton" id="anadeT" />
-      <input type="submit" value="Elimina" class="boton" id="eliminaT" />
-      <input type="submit" value="Modifica" class="boton" id="modificaT" />
-      <input type="submit" value="MUESTRA TRABAJADORES" class="boton" id="muestraT" />
-      <input type="submit" value="Añadir Pacientes" class="boton" id="anadePC" />
-    </div>
-  </form>
-  <div class="caja_mostrar_Trabajadores" id="mostrarTrab" class="mostrarTrab"></div>
-  <form action="#" method="post" class="form_hospital hidden" id="formPacientes">
-    <h3 class="title_formH">Formulario Pacientes Hospital</h3>
-    <div>
-      <label for="">ID del Paciente</label>
-      <input type="text" name="" id="idP" />
-    </div>
-    <div class="caja_nombre">
-      <label for="">Nombre del Paciente</label>
-      <input type="text" name="" id="nomP" />
-    </div>
-    <div class="caja_tlf">
-      <label for="">Teléfono del Paciente</label>
-      <input type="text" name="" id="telP" />
-    </div>
-    <div class="botones">
-      <input type="submit" value="Añade" class="boton" id="anadeP" />
-      <input type="submit" value="Elimina" class="boton" id="eliminaP" />
-      <input type="submit" value="Modifica" class="boton" id="modificaP" />
-      <input type="submit" value="MUESTRA PACIENTES" class="boton" id="muestraP" />
-    </div>
-  </form>
-  <div class="caja_mostrar_Pacientes" id="mostrarPAC" class="mostrarPac"></div>
-  <script type="module" src="index.js"></script>
-</body>
 
+    <!-- FORMULARIO PARA INGRESAR PACIENTES -->
+    <section class="section__pacientes">
+      <div class="section__pacientes section__pacientes--title">
+        <h3 class="title_pacientes">Formulario Pacientes Hospital</h3>
+      </div>
+      <form
+      action="#"
+      method="post"
+      class="form_hospital hidden"
+      id="formPacientes"
+    >
+      
+      <div>
+        <label for="idHospital"">Código Hospital</label>
+        <input type="text" name="idHospital" id="idHospital" required/>
+      </div>
+      <div>
+        <label for="idTrabajador">ID Trabajador</label>
+        <input type="text" name="idTrabajador" id="idTrabajador" required/>
+      </div>
+      <div>
+        <label for="idP">ID del Paciente</label>
+        <input type="text" name="idP" id="idP" />
+      </div>
+      <div class="caja_nombre">
+        <label for="nomP">Nombre del Paciente</label>
+        <input type="text" name="nomP" id="nomP" />
+      </div>
+      <div class="caja_tlf">
+        <label for="telP">Teléfono del Paciente</label>
+        <input type="text" name="telP" id="telP" />
+      </div>
+      <div class="botones">
+        <input type="submit" value="Añade" class="boton" id="anadeP" />
+        <input type="submit" value="Elimina" class="boton" id="eliminaP" />
+        <input type="submit" value="Modifica" class="boton" id="modificaP" />
+        <input
+          type="submit"
+          value="MUESTRA PACIENTES"
+          class="boton"
+          id="muestraP"
+        />
+      </div>
+    </form>
+    <div
+      class="caja_mostrar_Pacientes"
+      id="mostrarPAC"
+    ></div>
+    <div id="formModificaPAC" class="hidden">
+      <form action="#" method="post" id="formModificaPAC">
+        <label for="">ID DEL HOSPITAL DONDE VA</label>
+        <input type="text" id="idHOS" />
+        <label for="">ID TRABAJADOR AL QUE PERTENECE </label>
+        <input type="text" id="idTRA" />
+        <label for="">ID DEL PACIENTE A MODIFICAR </label>
+        <input type="text" id="idPAC" />
+        <label for="">OPCIÓN A MODIFICAR </label>
+        <select name="" id="opcionModificar">
+          <option value="id">DNI</option>
+          <option value="nombre">Nombre</option>
+          <option value="tlf">Télefono</option>
+        </select>
+        <label for="">INTRODUCE EL NUEVO DATO </label>
+        <input type="text" id="campo" />
+        <input type="submit" value="MODIFICA AHORA" class="boton" id="modifNOW" />
+      </form>
+    </div>
+    </section>
+
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
