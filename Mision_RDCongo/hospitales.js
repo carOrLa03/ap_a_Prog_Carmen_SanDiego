@@ -137,3 +137,18 @@ export default class Hospitales {
     }
   }
 }
+
+module.exports = {
+  añadeHospitales,
+  eliminaHospitales,
+  mostrarHospitales,
+  modificaHosp,
+  añadirTrabajadoresHospital,
+  muestraTrabajadoresHospital,
+  eliminaTrabajadoresHospital,
+  modificaTrabajadoresHospital,
+  anadePacdeTrabajadorHospital,
+  muestraPacdeTrabajadorHospital,
+  modificaPacdeTrabajadorHospital,
+  eliminaPacdeTrabajadorHospital
+}

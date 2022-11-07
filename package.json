@@ -1,0 +1,22 @@
+{
+  "name": "ap_a_prog_carmen_sandiego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./Mision_RDCongo/hospitales.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carOrLa03/ap_a_Prog_Carmen_SanDiego.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carOrLa03/ap_a_Prog_Carmen_SanDiego/issues"
+  },
+  "homepage": "https://github.com/carOrLa03/ap_a_Prog_Carmen_SanDiego#readme",
+  "devDependencies": {
+    "jest": "^29.2.2"
+  }
+}
