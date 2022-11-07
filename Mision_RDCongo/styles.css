@@ -1,12 +1,14 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     background-color: lightseagreen;
     color: rgb(23, 37, 37);
     text-align: center;
 }
+
 .header__title {
     font-size: 3em;
     color: bisque;
@@ -18,16 +20,42 @@ body {
     color: bisque;
 }
 
-.form_hospital {
-    width: 90%;
+.section__hospital,
+.section__trabajadores,
+.section__pacientes {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_hospital {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
 
 }
 
 .formModifica {
     display: block;
+    display: flex;
+    flex-direction: column;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+}
+
+.boton {
+    height: 2em;
+    margin-top: 0.5em;
+    background-color: antiquewhite;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 2px black;
+    font-size: 0.9em;
+
 }
 
 .hidden {
@@ -36,7 +64,7 @@ body {
 
 .caja_mostrar_hospitales,
 .caja_mostrar_Pacientes,
-.caja_mostrar_Trabajadores{
+.caja_mostrar_Trabajadores {
     display: flex;
     flex-direction: column;
     align-items: center;

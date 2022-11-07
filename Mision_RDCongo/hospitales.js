@@ -111,7 +111,7 @@ export default class Hospitales {
     }
   }
   muestraPacdeTrabajadorHospital(codigoH, idTrab) {
-    if (codigo == "") {
+    if (codigoH == "") {
       return alert("EL ID DEL HOSPITAL NO PUEDE ESTAR VACÍO");
     }
     for (let h of this.listHosp) {

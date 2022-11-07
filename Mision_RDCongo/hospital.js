@@ -51,7 +51,7 @@ export default class Hospital {
   mostrarTodoPersonal() {
     let cad = "";
     for (let trabajador of this.personal) {
-      cad += `${trabajador.muestraDatos()} \n`;
+      cad += `-------${trabajador.muestraDatos()} --------\n`;
     }
     return cad;
   }
@@ -91,9 +91,7 @@ export default class Hospital {
   añadePacientesTrabajador(id, nombrep, tlfp, dni) {
     for (let trabajador of this.personal) {
       if (trabajador.id === id) {
-        trabajador.rellenaPacientes(nombrep, tlfp, dni);
-      } else {
-        alert("INTRODUCE EL ID DEL TRABAJADOR");
+        return trabajador.rellenaPacientes(nombrep, tlfp, dni);
       }
     }
   }

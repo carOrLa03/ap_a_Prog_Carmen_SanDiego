@@ -27,6 +27,7 @@ bMuestraH.addEventListener("click", (e) => {
   const fragment = document.createDocumentFragment();
   fragment.appendChild(hs.mostrarHospitales());
   cajaHp.appendChild(fragment);
+
 });
 bEliminaH.addEventListener("click", (e) => {
   e.preventDefault();
@@ -165,7 +166,6 @@ bEliminaPAC.addEventListener("click", (e) => {
 bMuestraPAC.addEventListener("click", (e) => {
   e.preventDefault();
   const cajaPacientes = document.getElementById("mostrarPAC");
-  ("");
   const div = document.createElement("div");
   let idHospital = document.getElementById("idHospital").value;
   let idTrabajador = document.getElementById("idTrabajador").value;
@@ -195,3 +195,10 @@ bmodifNow.addEventListener("click", (e) => {
   formModPAC.classList.add("hidden");
   formModPAC.reset();
 });
+
+function elimina() {
+  const cajaHp = document.getElementById("mostrarHosp");
+  while (cajaHp.firstChild) {
+    cajaHp.removeChild(div.firstChild);
+  }
+}
