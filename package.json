@@ -2,7 +2,7 @@
   "name": "ap_a_prog_carmen_sandiego",
   "version": "1.0.0",
   "description": "",
-  "main": "./Mision_RDCongo/hospitales.js",
+  "main": "./Mision_RDCongo/clasesTEST/hospitales.js",
   "scripts": {
     "test": "jest"
   },
