@@ -1,6 +1,8 @@
-import Personal from "./clasesTEST/personal.js";
+// import Personal from "./clasesTEST/personal.js";
+// export default
+const Personal = require("./personal.js");
 
-export default class Hospital {
+class Hospital {
   codPostal;
   nombre;
   localidad;
@@ -121,3 +123,4 @@ export default class Hospital {
     return `Hospital: ${this.nombre} Localidad: ${this.localidad} Director: ${this.responsable} Código Postal: ${this.codPostal}\n`;
   }
 }
+module.exports = Hospital;

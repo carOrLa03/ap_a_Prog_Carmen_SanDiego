@@ -1,3 +1,6 @@
+const Hospital = require("./hospital.js");
+// const Personal = require("./personal.js");
+
 class Hospitales {
   listHosp;
   constructor() {
@@ -12,6 +15,7 @@ class Hospitales {
     this.listHosp.add(hosp);
     return `Hospital añadido`;
   }
+
   eliminaHospitales(codigo) {
     for (let hosp of this.listHosp) {
       if (hosp.codPostal === codigo) {
@@ -134,4 +138,4 @@ class Hospitales {
   }
 }
 
-module.exports = Hospitales
+module.exports = Hospitales;

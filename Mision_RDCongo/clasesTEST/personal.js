@@ -1,5 +1,6 @@
-import Paciente from "./clasesTEST/paciente.js";
-export default class Personal {
+// import Paciente from "./clasesTEST/paciente.js";
+// export default
+class Personal {
   nombre;
   especialidad;
   id;
@@ -81,3 +82,4 @@ export default class Personal {
     return `ID Trabajador: ${this.id}\n Nombre: ${this.nombre}\n Especialidad: ${this.especialidad}\n`;
   }
 }
+module.export = Personal;
