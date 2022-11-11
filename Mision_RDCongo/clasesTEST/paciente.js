@@ -1,4 +1,5 @@
-export default class Paciente {
+// export default 
+class Paciente {
   nombre;
   tlf;
   dni;
@@ -32,3 +33,4 @@ export default class Paciente {
     return `DNI del paciente: ${this.dni}\n Nombre: ${this.nombre}\n Télefono: ${this.tlf}\n`;
   }
 }
+module.exports = Paciente

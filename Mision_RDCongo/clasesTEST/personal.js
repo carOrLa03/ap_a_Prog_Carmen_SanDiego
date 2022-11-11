@@ -1,5 +1,7 @@
 // import Paciente from "./clasesTEST/paciente.js";
 // export default
+const Paciente = require("../clasesTEST/paciente.js");
+
 class Personal {
   nombre;
   especialidad;
@@ -82,4 +84,4 @@ class Personal {
     return `ID Trabajador: ${this.id}\n Nombre: ${this.nombre}\n Especialidad: ${this.especialidad}\n`;
   }
 }
-module.export = Personal;
+module.exports = Personal;

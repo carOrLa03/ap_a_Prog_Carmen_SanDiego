@@ -1,6 +1,6 @@
 // import Personal from "./clasesTEST/personal.js";
 // export default
-const Personal = require("./personal.js");
+const Personal = require("../clasesTEST/personal");
 
 class Hospital {
   codPostal;

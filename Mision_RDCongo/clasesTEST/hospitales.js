@@ -1,5 +1,4 @@
 const Hospital = require("./hospital.js");
-// const Personal = require("./personal.js");
 
 class Hospitales {
   listHosp;

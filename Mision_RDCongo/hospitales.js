@@ -138,14 +138,3 @@ export default class Hospitales {
   }
 }
 
-module.exports = {
-  añadeHospitales,
-  eliminaHospitales,
-  modificaHosp,
-  añadirTrabajadoresHospital,
-  eliminaTrabajadoresHospital,
-  modificaTrabajadoresHospital,
-  anadePacdeTrabajadorHospital,
-  modificaPacdeTrabajadorHospital,
-  eliminaPacdeTrabajadorHospital
-}
