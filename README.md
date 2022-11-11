@@ -10,6 +10,9 @@ La misión consiste en crear diferentes clases:
 
 Un hospital tiene muchos trabajadores, y un trabajador tiene muchos pacientes.
 
+### Tecnologías
+Realizado principalmente con JavaScript puro, ya que se trataba de aprender a usar las clases en JS.
+
 ### Mi solución
 Primero he creado la clase Paciente que tiene nombre, teléfono y dni para poder indentificarlo.
 Segundo he creado la clase Personal que tiene nombre, especialidad y un id para identificarlo, y además un "set" de pacientes.
